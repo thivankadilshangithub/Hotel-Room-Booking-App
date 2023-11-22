@@ -16,6 +16,7 @@ const BookRoom = () => {
     expirationDate: '',
     cvv: '',
     cardName: '',
+    amount:''
   };
 
   const [formData, setFormData] = useState(initialState);
@@ -25,7 +26,7 @@ const BookRoom = () => {
     const { name, value } = e.target;
   
     // Validate numeric values for Expiration Date and CVV
-    if ((name === 'expirationDate' || name === 'cvv') && !/^\d*$/.test(value)) {
+    if ((name === 'expirationDate' || name === 'cvv' || name==='amount') && !/^\d*$/.test(value)) {
       return; // Prevent non-numeric values
     }
   
@@ -129,15 +130,35 @@ const BookRoom = () => {
           </label>
         </div>
         <label className="form-label">
+            Amount:
+            <input
+              type="text"
+              name="amount"
+              value={formData.amount}
+              onChange={handleChange}
+              className={getClassName('amount')}
+            />
+          </label>
+        <label className="form-label">
           Card Type:
-          <input
+          {/* <input
             type="text"
             name="cardName"
             value={formData.cardName}
             onChange={handleChange}
             className={getClassName('cardName')}
-          />
+          /> */}
         </label>
+        <select
+        name="cardName"
+        value={formData.cardName}
+        onChange={handleChange}
+        className={getClassName('cardName')}>
+          <option value="" disabled>Select card type</option>
+          <option value="visa">Visa</option>
+          <option value="mastercard">MasterCard</option>
+          <option value="amex">American Express</option>
+        </select>
         <button type="button" onClick={handlePay} className="button-pay">
           Pay
         </button>

@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import ScrollToTop from '../Components/New/ScrollToTop'
 import Navbar from '../Components/New/Navbar'
-import Footer from '../Components/New/Footer'
+import Footer from '../Components/Footer/Footer'
 import mapboxgl from 'mapbox-gl';
 import { MAPBOX_TOKEN } from '../config/mapboxConfig';
 import Map, { Marker } from 'react-map-gl';
@@ -95,8 +95,11 @@ const Destination = () => {
     return (
       <div>
         <ScrollToTop />
+        <div style={{padding:'40px'}}>
         <Navbar />
-        <div style={{ marginTop: '40px', marginBottom: '60px' }}>
+        </div>
+        
+        <div style={{ marginBottom: '60px', marginLeft:'70px' }}>
           <Map
             mapboxAccessToken={MAPBOX_TOKEN}
             initialViewState={{
@@ -119,7 +122,8 @@ const Destination = () => {
             </Marker> */}
           </>
         ) : null}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column',
+         alignItems: 'center', marginLeft:'70px', marginRight:'80px'}}>
           {festivalsData.map((festival) => (
             <div
               key={festival.id}
@@ -198,8 +202,9 @@ const Destination = () => {
             </div>
           ))}
         </div>
+        <div style={{marginTop:'20px'}}>
         <Footer />
-  
+        </div>
       </div>
     )
   }

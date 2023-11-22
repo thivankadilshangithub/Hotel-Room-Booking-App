@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <Container state={isNavOpen ? 1 : 0}>
       <div className="brand">
-        <img src={Logo} alt="logo" style={{width: '120px', height: '60px'}}/>
+        <img src={Logo} alt="logo" style={{width: '200px', height: '100px'}}/>
       </div>
       <div className="toggle">
         {isNavOpen ? (
