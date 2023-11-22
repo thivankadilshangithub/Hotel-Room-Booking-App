@@ -1,0 +1,35 @@
+body {
+  padding: 0;
+  overflow-x: hidden;
+}
+h1 {
+    font-size: 2.8rem;
+    color: #327386; /* Adjust the color as needed */
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  h1:hover {
+    color: #73a1d3; /* Change to the color you want on hover */
+  }
+  
+  h1::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #007bff; /* Adjust to the color you want for the underline */
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* h1:hover::before {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+  } */
